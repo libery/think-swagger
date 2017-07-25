@@ -85,7 +85,7 @@ ThinkJS 是一个 Node.js 框架，自带脚手架通过简单的指令生成项
 
     ```
     
-3. 修改src/config/config.js
+3. 修改`src/config/config.js`文件：
 
     ```js
     module.exports = {
