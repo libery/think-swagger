@@ -13,14 +13,14 @@ thinkjs 是一个nodejs的集成环境，通过简单的指令生成项目目录
 
 1. 安装3个模块
 
-```
+```sh
 npm i think-swagger-parser --save
 npm i think-swagger-router --save
 npm i think-swagger-controller --save
 ```
-2. 修改src/config/middleware.js文件  
+2. 修改 `src/config/middleware.js` 文件  
 
-```
+```js
 const path = require('path');
 const swaggerParser = require('think-swagger-parser');
 const swaggerRouter = require('think-swagger-router');
@@ -79,11 +79,10 @@ module.exports = [
   }
   // 'controller'
 ];
-
 ```
-3. 修改src/config/config.js
+3. 修改 `src/config/config.js`
 
-```
+```js
 module.exports = {
   api_doc: './api/swagger.yaml',
   controller_dir: './app/controller'
