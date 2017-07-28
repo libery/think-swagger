@@ -56,8 +56,8 @@ ThinkJS 是一个 Node.js 框架，自带脚手架通过简单的指令生成项
         options: {
           debug: isDev
       }
-    }
-  
+    }
+    
     ```
 + 删除默认的controller：
 
