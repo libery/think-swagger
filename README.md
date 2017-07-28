@@ -13,15 +13,54 @@ ThinkJS 是一个 Node.js 框架，自带脚手架通过简单的指令生成项
 
 ## 安装
 
-要实现该功能，在新建 ThinkJS 3.x 项目后，需要修改`src/config/middleware.js`和`config.js`引入并启用以上3个 middleware，并配置 swagger 文档路径和 ThinkJS controller 路径：
+要实现该功能，在新建 ThinkJS 3.x 项目后，需要修改`src/config/middleware.js`引入并启用以上3个 middleware，并配置 swagger 文档路径和 ThinkJS controller 路径：
 
 1. 安装 3 个模块
 
     ```bash
-    npm i think-swagger-parser think-swagger-router think-swagger-controller --save
-    ```
-    
+    npm i think-swagger-parser think-swagger-router think-swagger-controller --save  ```  
 2. 修改`src/config/middleware.js`文件  
+
++ 增加swaggerParser：
+
+    ```js
+{
+      handle: swaggerParser,
+        options: {
+          debug: isDev,
+          api_doc: './api/swagger.yaml',
+          controller_dir: './app/controller'
+        }
+    }
+    ```
++ 增加swaggerParser：
+
+    ```js
+{
+      handle: swaggerRouter,
+        options: {
+          debug: isDev
+      }
+  }
+    ```
+
++ 增加swaggerController：
+
+    ```js
+{
+    handle: swaggerController,
+        options: {
+          debug: isDev
+        }
+  }
+    ```
++ 删除默认的controller：
+
+    ```js
+// 'controller'
+    ```
+
++ 完整middleware文件：
 
     ```js
     const path = require('path');
@@ -60,7 +99,9 @@ ThinkJS 是一个 Node.js 框架，自带脚手架通过简单的指令生成项
       {
         handle: swaggerParser,
         options: {
-          debug: isDev
+          debug: isDev,
+          api_doc: './api/swagger.yaml',
+          controller_dir: './app/controller'
         }
       },
       {
@@ -84,13 +125,5 @@ ThinkJS 是一个 Node.js 框架，自带脚手架通过简单的指令生成项
     ];
 
     ```
-    
-3. 修改`src/config/config.js`文件：
 
-    ```js
-    module.exports = {
-      api_doc: './api/swagger.yaml',
-      controller_dir: './app/controller'
-    };
-    ```
 
