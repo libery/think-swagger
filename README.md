@@ -26,7 +26,7 @@ ThinkJS 是一个 Node.js 框架，自带脚手架通过简单的指令生成项
 + 增加swaggerParser：
 
     ```js
-{
+    {
       handle: swaggerParser,
         options: {
           debug: isDev,
@@ -36,33 +36,33 @@ ThinkJS 是一个 Node.js 框架，自带脚手架通过简单的指令生成项
     }
     
     ```
-+ 增加swaggerParser：
++ 增加swaggerRouter：
 
     ```js
-{
+    {
       handle: swaggerRouter,
         options: {
           debug: isDev
       }
-  }
+    }
   
     ```
 
 + 增加swaggerController：
 
     ```js
-{
-    handle: swaggerController,
+    {
+      handle: swaggerController,
         options: {
           debug: isDev
-        }
-  }
+      }
+    }
   
     ```
 + 删除默认的controller：
 
     ```js
-// 'controller'
+    // 'controller'
 
     ```
 
