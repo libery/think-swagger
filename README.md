@@ -18,7 +18,9 @@ ThinkJS 是一个 Node.js 框架，自带脚手架通过简单的指令生成项
 1. 安装 3 个模块
 
     ```bash
-    npm i think-swagger-parser think-swagger-router think-swagger-controller --save  ```  
+    npm i think-swagger-parser think-swagger-router think-swagger-controller --save  
+    ```  
+    
 2. 修改`src/config/middleware.js`文件  
 
 + 增加swaggerParser：
@@ -32,6 +34,7 @@ ThinkJS 是一个 Node.js 框架，自带脚手架通过简单的指令生成项
           controller_dir: './app/controller'
         }
     }
+    
     ```
 + 增加swaggerParser：
 
@@ -42,6 +45,7 @@ ThinkJS 是一个 Node.js 框架，自带脚手架通过简单的指令生成项
           debug: isDev
       }
   }
+  
     ```
 
 + 增加swaggerController：
@@ -53,11 +57,13 @@ ThinkJS 是一个 Node.js 框架，自带脚手架通过简单的指令生成项
           debug: isDev
         }
   }
+  
     ```
 + 删除默认的controller：
 
     ```js
 // 'controller'
+
     ```
 
 + 完整middleware文件：
